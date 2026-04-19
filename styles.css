@@ -395,6 +395,52 @@ main {
   min-height: 190px;
 }
 
+.demo-img-wrap {
+  position: relative;
+  height: 190px;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.demo-img-loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0fdf4, #e0f2fe);
+  border-radius: 16px;
+  gap: 8px;
+}
+
+.demo-loader-icon {
+  font-size: 2.5rem;
+  animation: pulse-icon 1.5s ease-in-out infinite;
+}
+
+.demo-illustration-img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.demo-illustration-img.loaded {
+  opacity: 1;
+}
+
+@keyframes pulse-icon {
+  50% {
+    transform: scale(1.15);
+  }
+}
+
 .svg-sky {
   fill: #ffffff;
 }
