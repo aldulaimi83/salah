@@ -367,7 +367,7 @@ main {
 }
 
 .step-card {
-  min-height: 230px;
+  min-height: 420px;
   padding: 20px;
   border-radius: 28px;
   background:
@@ -376,6 +376,172 @@ main {
   border: 2px solid var(--line);
   box-shadow: 0 12px 28px rgba(23, 50, 77, 0.1);
   transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.demo-scene {
+  position: relative;
+  min-height: 150px;
+  margin-bottom: 16px;
+  border-radius: 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.82), transparent 18%),
+    linear-gradient(180deg, #bdeeff 0%, #f8f4c8 70%, #a7e5bd 100%);
+  border: 2px solid rgba(23, 50, 77, 0.08);
+}
+
+.demo-scene::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 42px;
+  background: rgba(15, 118, 110, 0.12);
+}
+
+.demo-sun,
+.demo-person,
+.demo-water,
+.demo-prop {
+  position: absolute;
+  display: grid;
+  place-items: center;
+}
+
+.demo-sun {
+  width: 38px;
+  height: 38px;
+  top: 16px;
+  right: 18px;
+  border-radius: 50%;
+  background: #ffd166;
+  box-shadow: 0 0 0 10px rgba(255, 209, 102, 0.22);
+}
+
+.demo-person {
+  width: 46px;
+  height: 78px;
+  left: 24px;
+  bottom: 24px;
+  border-radius: 24px 24px 14px 14px;
+  background: linear-gradient(180deg, #17324d 0 30%, #22c55e 30% 100%);
+}
+
+.demo-person::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -22px;
+  left: 8px;
+  border-radius: 50%;
+  background: #f6c99d;
+}
+
+.demo-person::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 10px;
+  top: 26px;
+  left: -12px;
+  border-radius: 999px;
+  background: #f6c99d;
+  transform: rotate(-10deg);
+}
+
+.demo-water {
+  width: 76px;
+  height: 58px;
+  right: 24px;
+  bottom: 28px;
+  border-radius: 50% 50% 45% 45%;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.8), transparent 18%),
+    linear-gradient(180deg, #74d4ff, #2aa4e8);
+  box-shadow: inset 0 -10px 0 rgba(23, 50, 77, 0.08);
+}
+
+.demo-prop {
+  right: 38px;
+  top: 26px;
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.75);
+  font-size: 2rem;
+  box-shadow: 0 8px 18px rgba(23, 50, 77, 0.12);
+}
+
+.scene-intention .demo-water,
+.scene-qiblah .demo-water,
+.scene-takbir .demo-water,
+.scene-ruku .demo-water,
+.scene-stand .demo-water,
+.scene-sujood .demo-water,
+.scene-sit .demo-water,
+.scene-salam .demo-water,
+.scene-recite .demo-water {
+  width: 92px;
+  height: 54px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff, #fff2b8);
+}
+
+.scene-hands .demo-person::after,
+.scene-mouth .demo-person::after,
+.scene-nose .demo-person::after,
+.scene-face .demo-person::after,
+.scene-arms .demo-person::after {
+  background: linear-gradient(90deg, #f6c99d 0 58%, #74d4ff 58% 100%);
+}
+
+.scene-head .demo-water,
+.scene-ears .demo-water {
+  top: 28px;
+  right: 32px;
+  bottom: auto;
+  width: 54px;
+  height: 54px;
+}
+
+.scene-feet .demo-water {
+  bottom: 8px;
+  right: 34px;
+  width: 90px;
+  height: 34px;
+}
+
+.scene-qiblah .demo-prop {
+  font-size: 2.5rem;
+}
+
+.scene-takbir .demo-person::after {
+  width: 84px;
+  top: -4px;
+  left: -18px;
+  transform: rotate(-28deg);
+}
+
+.scene-ruku .demo-person {
+  width: 80px;
+  height: 44px;
+  bottom: 44px;
+  border-radius: 28px;
+  transform: rotate(10deg);
+}
+
+.scene-sujood .demo-person {
+  width: 96px;
+  height: 34px;
+  bottom: 34px;
+  border-radius: 24px;
+}
+
+.scene-sit .demo-person {
+  width: 62px;
+  height: 52px;
+  bottom: 34px;
+  border-radius: 22px;
 }
 
 .step-card:hover {
@@ -403,6 +569,33 @@ main {
   color: var(--muted);
   line-height: 1.65;
   font-weight: 700;
+}
+
+.step-detail,
+.step-tip {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 18px;
+  line-height: 1.6;
+  font-weight: 750;
+}
+
+.step-detail {
+  background: rgba(116, 212, 255, 0.18);
+  color: #29465c;
+}
+
+.step-detail strong,
+.step-tip strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.step-tip {
+  background: rgba(255, 209, 102, 0.24);
+  color: #654407;
 }
 
 .arabic-line {
