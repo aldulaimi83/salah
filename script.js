@@ -406,13 +406,6 @@ function humanStepIllustration(scene, title, icon) {
         <path d="M195 147 H265" />
       </g>`;
 
-  const prop = `
-    <g class="svg-prop">
-      <rect x="224" y="28" width="58" height="48" rx="16"></rect>
-      <text x="253" y="61" text-anchor="middle">${icon}</text>
-    </g>
-  `;
-
   const standing = `
     <g class="svg-child pose-standing">
       <path class="svg-leg" d="M119 122 L113 162" />
@@ -552,7 +545,6 @@ function humanStepIllustration(scene, title, icon) {
       <path class="svg-ground" d="M0 142 H320 V190 H0Z" />
       ${water}
       ${poseMap[scene] || standing}
-      ${prop}
     </svg>
   `;
 }
