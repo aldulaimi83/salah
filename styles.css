@@ -384,424 +384,133 @@ main {
   margin-bottom: 16px;
   border-radius: 28px;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.82), transparent 18%),
-    radial-gradient(circle at 74% 28%, rgba(255, 209, 102, 0.28), transparent 20%),
-    linear-gradient(180deg, #c9f2ff 0%, #fff0bf 68%, #9fe4bc 100%);
+  background: #dff7ff;
   border: 2px solid rgba(23, 50, 77, 0.08);
 }
 
-.demo-scene::before {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  height: 42px;
-  background: rgba(15, 118, 110, 0.12);
-}
-
-.demo-sun,
-.demo-person,
-.demo-water,
-.demo-prop {
-  position: absolute;
-  display: grid;
-  place-items: center;
-}
-
-.demo-sun {
-  width: 38px;
-  height: 38px;
-  top: 16px;
-  right: 18px;
-  border-radius: 50%;
-  background: #ffd166;
-  box-shadow: 0 0 0 10px rgba(255, 209, 102, 0.22);
-}
-
-.demo-person {
-  width: 118px;
-  height: 158px;
-  left: 28px;
-  bottom: 10px;
+.demo-illustration {
   display: block;
-  transform-origin: 50% 90%;
+  width: 100%;
+  height: 100%;
+  min-height: 190px;
 }
 
-.cartoon-head,
-.cartoon-body,
-.cartoon-arm,
-.cartoon-leg,
-.cartoon-hair,
-.cartoon-eye,
-.cartoon-smile {
-  position: absolute;
-  display: block;
+.svg-sky {
+  fill: #d8f5ff;
 }
 
-.cartoon-head {
-  width: 62px;
-  height: 66px;
-  top: 0;
-  left: 28px;
-  border-radius: 48% 48% 46% 46%;
-  background:
-    radial-gradient(circle at 37% 35%, rgba(255, 236, 214, 0.7), transparent 13%),
-    #f4bd8b;
-  border: 3px solid rgba(109, 62, 40, 0.16);
-  box-shadow: inset -7px -8px 0 rgba(173, 105, 54, 0.12), 0 8px 14px rgba(23, 50, 77, 0.08);
-  z-index: 6;
+.svg-ground {
+  fill: #a8e3bd;
 }
 
-.cartoon-hair {
-  width: 58px;
-  height: 28px;
-  top: -8px;
-  left: 2px;
-  border-radius: 28px 28px 16px 16px;
-  background:
-    radial-gradient(circle at 14px 24px, #17324d 0 9px, transparent 10px),
-    radial-gradient(circle at 30px 24px, #17324d 0 10px, transparent 11px),
-    radial-gradient(circle at 46px 23px, #17324d 0 8px, transparent 9px),
-    #17324d;
+.svg-sun {
+  fill: #ffd166;
+  filter: drop-shadow(0 0 12px rgba(255, 209, 102, 0.65));
 }
 
-.cartoon-eye {
-  width: 7px;
-  height: 9px;
-  top: 31px;
-  border-radius: 50%;
-  background: #17324d;
+.svg-prayer-mat rect {
+  fill: #fff4c6;
+  stroke: rgba(132, 89, 12, 0.2);
+  stroke-width: 3;
 }
 
-.eye-left {
-  left: 18px;
+.svg-prayer-mat path {
+  stroke: rgba(132, 89, 12, 0.32);
+  stroke-width: 4;
+  stroke-linecap: round;
 }
 
-.eye-right {
-  right: 18px;
+.svg-water ellipse {
+  fill: #2aa4e8;
 }
 
-.cartoon-smile {
-  width: 24px;
-  height: 12px;
-  left: 19px;
-  bottom: 12px;
-  border: 3px solid #9f5145;
-  border-top: 0;
-  border-radius: 0 0 18px 18px;
+.svg-water path {
+  fill: none;
+  stroke: #c9f2ff;
+  stroke-width: 5;
+  stroke-linecap: round;
 }
 
-.cartoon-body {
-  width: 58px;
-  height: 64px;
-  left: 30px;
-  top: 62px;
-  border-radius: 22px 22px 18px 18px;
-  background:
-    linear-gradient(90deg, transparent 0 42%, rgba(255, 255, 255, 0.16) 42% 58%, transparent 58% 100%),
-    linear-gradient(180deg, #2fd28d, #0f766e);
-  border: 3px solid rgba(23, 50, 77, 0.12);
-  z-index: 4;
+.svg-water circle {
+  fill: #e7fbff;
 }
 
-.cartoon-body::after {
-  content: "";
-  position: absolute;
-  width: 28px;
-  height: 12px;
-  left: 12px;
-  top: -3px;
-  border-radius: 0 0 999px 999px;
-  background: #f4bd8b;
+.svg-body {
+  fill: #19a974;
+  stroke: rgba(23, 50, 77, 0.18);
+  stroke-width: 3;
 }
 
-.cartoon-arm {
-  width: 17px;
-  height: 62px;
-  top: 70px;
-  border-radius: 999px;
-  background: #f4bd8b;
-  border: 2px solid rgba(23, 50, 77, 0.1);
-  transform-origin: 50% 9px;
-  z-index: 3;
+.svg-head,
+.svg-neck,
+.svg-arm,
+.svg-hand {
+  fill: none;
+  stroke: #efb985;
+  stroke-width: 14;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.cartoon-arm::after {
-  content: "";
-  position: absolute;
-  width: 22px;
-  height: 18px;
-  left: -3px;
-  bottom: -8px;
-  border-radius: 50%;
-  background: #f4bd8b;
-  border: 2px solid rgba(23, 50, 77, 0.08);
+.svg-head,
+.svg-neck {
+  fill: #efb985;
 }
 
-.arm-left {
-  left: 21px;
-  transform: rotate(10deg);
+.svg-head {
+  stroke-width: 3;
+  stroke: rgba(99, 55, 32, 0.18);
 }
 
-.arm-right {
-  right: 21px;
-  transform: rotate(-10deg);
+.svg-hair {
+  fill: #17324d;
 }
 
-.cartoon-leg {
-  width: 20px;
-  height: 46px;
-  top: 121px;
-  border-radius: 999px;
-  background: #31558a;
-  transform-origin: 50% 4px;
-  z-index: 2;
+.svg-eye {
+  fill: #17324d;
 }
 
-.leg-left {
-  left: 34px;
+.svg-smile {
+  fill: none;
+  stroke: #944b42;
+  stroke-width: 3;
+  stroke-linecap: round;
 }
 
-.leg-right {
-  right: 34px;
+.svg-arm {
+  stroke: #efb985;
 }
 
-.cartoon-leg::after {
-  content: "";
-  position: absolute;
-  width: 32px;
-  height: 13px;
-  left: -6px;
-  bottom: -5px;
-  border-radius: 999px;
-  background: #17324d;
+.wet-arm {
+  stroke: #77d9ff;
 }
 
-.demo-water {
-  width: 88px;
-  height: 64px;
-  right: 26px;
-  bottom: 28px;
-  border-radius: 48% 52% 45% 45%;
-  background:
-    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.8), transparent 18%),
-    linear-gradient(180deg, #74d4ff, #2aa4e8);
-  box-shadow: inset 0 -10px 0 rgba(23, 50, 77, 0.08);
+.svg-hand {
+  stroke-width: 8;
 }
 
-.demo-prop {
-  right: 36px;
-  top: 26px;
-  width: 62px;
-  height: 62px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.75);
-  font-size: 2rem;
-  box-shadow: 0 8px 18px rgba(23, 50, 77, 0.12);
+.svg-leg {
+  fill: none;
+  stroke: #31558a;
+  stroke-width: 15;
+  stroke-linecap: round;
 }
 
-.scene-intention .demo-water,
-.scene-qiblah .demo-water,
-.scene-takbir .demo-water,
-.scene-ruku .demo-water,
-.scene-stand .demo-water,
-.scene-sujood .demo-water,
-.scene-sit .demo-water,
-.scene-salam .demo-water,
-.scene-recite .demo-water {
-  width: 92px;
-  height: 54px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #ffffff, #fff2b8);
+.svg-shoe {
+  fill: none;
+  stroke: #17324d;
+  stroke-width: 10;
+  stroke-linecap: round;
 }
 
-.scene-hands .arm-left,
-.scene-mouth .arm-left,
-.scene-nose .arm-left,
-.scene-face .arm-left,
-.scene-arms .arm-left {
-  background: linear-gradient(180deg, #f4bd8b 0 55%, #74d4ff 55% 100%);
+.svg-prop rect {
+  fill: rgba(255, 255, 255, 0.82);
+  filter: drop-shadow(0 8px 10px rgba(23, 50, 77, 0.12));
 }
 
-.scene-hands .arm-right,
-.scene-mouth .arm-right,
-.scene-nose .arm-right,
-.scene-face .arm-right,
-.scene-arms .arm-right {
-  background: linear-gradient(180deg, #f4bd8b 0 50%, #74d4ff 50% 100%);
-}
-
-.scene-hands .arm-left {
-  transform: rotate(80deg);
-  left: 42px;
-  top: 91px;
-}
-
-.scene-hands .arm-right {
-  transform: rotate(-80deg);
-  right: 42px;
-  top: 91px;
-}
-
-.scene-mouth .arm-right,
-.scene-nose .arm-right,
-.scene-face .arm-right {
-  transform: rotate(-142deg);
-  right: 28px;
-  top: 54px;
-}
-
-.scene-arms .arm-left {
-  transform: rotate(72deg);
-  left: 12px;
-}
-
-.scene-arms .arm-right {
-  transform: rotate(-72deg);
-  right: 12px;
-}
-
-.scene-head .demo-water,
-.scene-ears .demo-water {
-  top: 36px;
-  right: 32px;
-  bottom: auto;
-  width: 54px;
-  height: 54px;
-}
-
-.scene-feet .demo-water {
-  bottom: 8px;
-  right: 34px;
-  width: 90px;
-  height: 34px;
-}
-
-.scene-qiblah .demo-prop {
-  font-size: 2.5rem;
-}
-
-.scene-takbir .arm-left {
-  top: 50px;
-  left: 14px;
-  transform: rotate(154deg);
-}
-
-.scene-takbir .arm-right {
-  top: 50px;
-  right: 14px;
-  transform: rotate(-154deg);
-}
-
-.scene-ruku .demo-person {
-  left: 38px;
-  bottom: 22px;
-  transform: rotate(70deg) scale(0.95);
-}
-
-.scene-ruku .cartoon-head {
-  left: 63px;
-  top: 9px;
-}
-
-.scene-ruku .arm-left,
-.scene-ruku .arm-right {
-  top: 78px;
-  height: 42px;
-}
-
-.scene-ruku .leg-left {
-  transform: rotate(-18deg);
-}
-
-.scene-ruku .leg-right {
-  transform: rotate(18deg);
-}
-
-.scene-sujood .demo-person {
-  width: 154px;
-  height: 96px;
-  left: 26px;
-  bottom: 18px;
-}
-
-.scene-sujood .cartoon-head {
-  width: 56px;
-  height: 58px;
-  left: 96px;
-  top: 42px;
-}
-
-.scene-sujood .cartoon-body {
-  width: 84px;
-  height: 40px;
-  left: 28px;
-  top: 53px;
-  transform: rotate(0deg);
-  border-radius: 22px;
-}
-
-.scene-sujood .arm-left,
-.scene-sujood .arm-right {
-  height: 38px;
-  top: 62px;
-}
-
-.scene-sujood .arm-left {
-  left: 93px;
-  transform: rotate(78deg);
-}
-
-.scene-sujood .arm-right {
-  right: 0;
-  transform: rotate(-78deg);
-}
-
-.scene-sujood .leg-left,
-.scene-sujood .leg-right {
-  top: 48px;
-  height: 34px;
-}
-
-.scene-sujood .leg-left {
-  left: 10px;
-  transform: rotate(85deg);
-}
-
-.scene-sujood .leg-right {
-  left: 30px;
-  transform: rotate(85deg);
-}
-
-.scene-sit .demo-person {
-  bottom: 18px;
-}
-
-.scene-sit .cartoon-body {
-  top: 74px;
-  height: 48px;
-}
-
-.scene-sit .leg-left {
-  top: 125px;
-  left: 26px;
-  transform: rotate(78deg);
-}
-
-.scene-sit .leg-right {
-  top: 128px;
-  right: 18px;
-  transform: rotate(-78deg);
-}
-
-.scene-salam .cartoon-head {
-  transform: rotate(18deg);
-}
-
-.scene-recite .demo-prop,
-.scene-qiblah .demo-prop,
-.scene-salam .demo-prop {
-  background: rgba(255, 255, 255, 0.88);
+.svg-prop text {
+  dominant-baseline: middle;
+  font-size: 28px;
 }
 
 .step-card:hover {

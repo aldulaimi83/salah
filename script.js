@@ -391,29 +391,180 @@ function getContent(lang) {
   return { ...CONTENT.en, ...(CONTENT[lang] || {}) };
 }
 
+function humanStepIllustration(scene, title, icon) {
+  const washScenes = new Set(["hands", "mouth", "nose", "face", "arms", "head", "ears", "feet"]);
+  const prayerScenes = new Set(["qiblah", "takbir", "recite", "ruku", "stand", "sujood", "sit", "salam"]);
+  const water = washScenes.has(scene)
+    ? `<g class="svg-water">
+        <ellipse cx="250" cy="135" rx="44" ry="28"></ellipse>
+        <path d="M220 132 C234 146 266 146 280 132" />
+        <circle cx="237" cy="119" r="5"></circle>
+        <circle cx="258" cy="114" r="4"></circle>
+      </g>`
+    : `<g class="svg-prayer-mat">
+        <rect x="178" y="122" width="104" height="48" rx="16"></rect>
+        <path d="M195 147 H265" />
+      </g>`;
+
+  const prop = `
+    <g class="svg-prop">
+      <rect x="224" y="28" width="58" height="48" rx="16"></rect>
+      <text x="253" y="61" text-anchor="middle">${icon}</text>
+    </g>
+  `;
+
+  const standing = `
+    <g class="svg-child pose-standing">
+      <path class="svg-leg" d="M119 122 L113 162" />
+      <path class="svg-leg" d="M143 122 L149 162" />
+      <path class="svg-shoe" d="M105 164 H124" />
+      <path class="svg-shoe" d="M142 164 H160" />
+      <path class="svg-arm arm-left" d="M105 78 C95 99 92 115 90 130" />
+      <path class="svg-arm arm-right" d="M157 78 C167 99 170 115 172 130" />
+      <path class="svg-hand" d="M86 132 Q91 139 96 132" />
+      <path class="svg-hand" d="M168 132 Q173 139 178 132" />
+      <path class="svg-body" d="M103 68 Q131 52 159 68 L153 126 H109 Z" />
+      <circle class="svg-neck" cx="131" cy="66" r="9" />
+      <circle class="svg-head" cx="131" cy="42" r="27" />
+      <path class="svg-hair" d="M105 34 C110 10 151 9 157 35 C143 26 125 27 105 34Z" />
+      <circle class="svg-eye" cx="121" cy="43" r="3" />
+      <circle class="svg-eye" cx="141" cy="43" r="3" />
+      <path class="svg-smile" d="M122 54 Q131 61 141 54" />
+    </g>
+  `;
+
+  const takbir = `
+    <g class="svg-child pose-takbir">
+      <path class="svg-leg" d="M119 122 L113 162" />
+      <path class="svg-leg" d="M143 122 L149 162" />
+      <path class="svg-shoe" d="M105 164 H124" />
+      <path class="svg-shoe" d="M142 164 H160" />
+      <path class="svg-body" d="M103 68 Q131 52 159 68 L153 126 H109 Z" />
+      <path class="svg-arm" d="M109 76 C88 60 82 42 82 28" />
+      <path class="svg-arm" d="M153 76 C174 60 180 42 180 28" />
+      <path class="svg-hand" d="M76 27 Q82 20 88 27" />
+      <path class="svg-hand" d="M174 27 Q180 20 186 27" />
+      <circle class="svg-neck" cx="131" cy="66" r="9" />
+      <circle class="svg-head" cx="131" cy="42" r="27" />
+      <path class="svg-hair" d="M105 34 C110 10 151 9 157 35 C143 26 125 27 105 34Z" />
+      <circle class="svg-eye" cx="121" cy="43" r="3" />
+      <circle class="svg-eye" cx="141" cy="43" r="3" />
+      <path class="svg-smile" d="M122 54 Q131 61 141 54" />
+    </g>
+  `;
+
+  const ruku = `
+    <g class="svg-child pose-ruku">
+      <path class="svg-leg" d="M96 129 L83 164" />
+      <path class="svg-leg" d="M127 129 L135 164" />
+      <path class="svg-shoe" d="M75 166 H96" />
+      <path class="svg-shoe" d="M128 166 H149" />
+      <path class="svg-body" d="M82 86 C113 77 143 81 164 102 L145 130 C123 113 102 110 79 116Z" />
+      <path class="svg-arm" d="M117 112 C111 132 106 146 96 153" />
+      <path class="svg-arm" d="M143 113 C141 134 141 146 135 155" />
+      <circle class="svg-head" cx="172" cy="91" r="25" />
+      <path class="svg-hair" d="M149 83 C154 61 190 61 196 85 C183 77 166 77 149 83Z" />
+      <circle class="svg-eye" cx="165" cy="92" r="3" />
+      <path class="svg-smile" d="M163 102 Q171 107 180 101" />
+    </g>
+  `;
+
+  const sujood = `
+    <g class="svg-child pose-sujood">
+      <path class="svg-body" d="M76 109 C112 91 157 98 184 124 L170 148 C135 134 101 132 65 144Z" />
+      <circle class="svg-head" cx="202" cy="132" r="24" />
+      <path class="svg-hair" d="M180 126 C185 106 219 107 225 128 C211 122 195 122 180 126Z" />
+      <path class="svg-arm" d="M178 138 C194 150 211 151 228 146" />
+      <path class="svg-arm" d="M176 149 C194 163 214 165 234 160" />
+      <path class="svg-leg" d="M74 134 C50 136 36 149 30 164" />
+      <path class="svg-leg" d="M91 144 C67 148 56 158 52 170" />
+      <path class="svg-shoe" d="M24 166 H44" />
+      <path class="svg-shoe" d="M47 172 H67" />
+    </g>
+  `;
+
+  const sit = `
+    <g class="svg-child pose-sit">
+      <path class="svg-body" d="M105 73 Q132 58 158 75 L151 128 H110 Z" />
+      <path class="svg-leg" d="M111 128 C88 137 73 149 63 164" />
+      <path class="svg-leg" d="M148 128 C173 136 187 148 196 164" />
+      <path class="svg-shoe" d="M55 166 H78" />
+      <path class="svg-shoe" d="M189 166 H212" />
+      <path class="svg-arm" d="M108 82 C94 101 90 113 88 125" />
+      <path class="svg-arm" d="M155 82 C170 101 174 113 176 125" />
+      <circle class="svg-head" cx="132" cy="46" r="27" />
+      <path class="svg-hair" d="M106 38 C112 14 151 13 158 39 C144 30 125 31 106 38Z" />
+      <circle class="svg-eye" cx="122" cy="47" r="3" />
+      <circle class="svg-eye" cx="142" cy="47" r="3" />
+      <path class="svg-smile" d="M123 58 Q132 64 142 58" />
+    </g>
+  `;
+
+  const washing = `
+    <g class="svg-child pose-wash">
+      <path class="svg-leg" d="M119 122 L113 162" />
+      <path class="svg-leg" d="M143 122 L149 162" />
+      <path class="svg-shoe" d="M105 164 H124" />
+      <path class="svg-shoe" d="M142 164 H160" />
+      <path class="svg-body" d="M103 68 Q131 52 159 68 L153 126 H109 Z" />
+      <path class="svg-arm wet-arm" d="M107 82 C134 99 159 99 184 82" />
+      <path class="svg-arm wet-arm" d="M154 82 C176 91 196 93 215 86" />
+      <path class="svg-hand" d="M181 81 Q187 75 193 83" />
+      <circle class="svg-neck" cx="131" cy="66" r="9" />
+      <circle class="svg-head" cx="131" cy="42" r="27" />
+      <path class="svg-hair" d="M105 34 C110 10 151 9 157 35 C143 26 125 27 105 34Z" />
+      <circle class="svg-eye" cx="121" cy="43" r="3" />
+      <circle class="svg-eye" cx="141" cy="43" r="3" />
+      <path class="svg-smile" d="M122 54 Q131 61 141 54" />
+    </g>
+  `;
+
+  const poseMap = {
+    hands: washing,
+    mouth: washing,
+    nose: washing,
+    face: washing,
+    arms: washing,
+    head: washing,
+    ears: washing,
+    feet: washing,
+    takbir,
+    ruku,
+    sujood,
+    sit,
+    qiblah: standing,
+    recite: standing,
+    stand: standing,
+    salam: standing,
+    intention: standing,
+  };
+
+  return `
+    <svg class="demo-illustration" viewBox="0 0 320 190" role="img" aria-label="${title}" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="matGradient-${scene}" x1="0" x2="1">
+          <stop offset="0" stop-color="#fff7cf" />
+          <stop offset="1" stop-color="#f5d36f" />
+        </linearGradient>
+      </defs>
+      <rect class="svg-sky" x="0" y="0" width="320" height="190" rx="24" />
+      <circle class="svg-sun" cx="274" cy="38" r="23" />
+      <path class="svg-ground" d="M0 142 H320 V190 H0Z" />
+      ${water}
+      ${poseMap[scene] || standing}
+      ${prop}
+    </svg>
+  `;
+}
+
 function renderSteps(container, steps, scenes, content) {
   container.innerHTML = steps
     .map(([title, text, detail, tip, icon], index) => {
       const scene = scenes[index] || "default";
       return `
         <article class="step-card">
-          <div class="demo-scene scene-${scene}" role="img" aria-label="${content.pictureLabel}: ${title}">
-            <span class="demo-sun"></span>
-            <span class="demo-person" aria-hidden="true">
-              <span class="cartoon-head">
-                <span class="cartoon-hair"></span>
-                <span class="cartoon-eye eye-left"></span>
-                <span class="cartoon-eye eye-right"></span>
-                <span class="cartoon-smile"></span>
-              </span>
-              <span class="cartoon-body"></span>
-              <span class="cartoon-arm arm-left"></span>
-              <span class="cartoon-arm arm-right"></span>
-              <span class="cartoon-leg leg-left"></span>
-              <span class="cartoon-leg leg-right"></span>
-            </span>
-            <span class="demo-water"></span>
-            <span class="demo-prop">${icon}</span>
+          <div class="demo-scene image-demo scene-${scene}" role="img" aria-label="${content.pictureLabel}: ${title}">
+            ${humanStepIllustration(scene, title, icon)}
           </div>
           <div class="step-icon" aria-hidden="true">${icon}</div>
           <h3>${index + 1}. ${title}</h3>
