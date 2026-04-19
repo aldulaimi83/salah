@@ -380,13 +380,14 @@ main {
 
 .demo-scene {
   position: relative;
-  min-height: 150px;
+  min-height: 190px;
   margin-bottom: 16px;
-  border-radius: 24px;
+  border-radius: 28px;
   overflow: hidden;
   background:
     radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.82), transparent 18%),
-    linear-gradient(180deg, #bdeeff 0%, #f8f4c8 70%, #a7e5bd 100%);
+    radial-gradient(circle at 74% 28%, rgba(255, 209, 102, 0.28), transparent 20%),
+    linear-gradient(180deg, #c9f2ff 0%, #fff0bf 68%, #9fe4bc 100%);
   border: 2px solid rgba(23, 50, 77, 0.08);
 }
 
@@ -418,10 +419,10 @@ main {
 }
 
 .demo-person {
-  width: 86px;
-  height: 118px;
-  left: 24px;
-  bottom: 18px;
+  width: 118px;
+  height: 158px;
+  left: 28px;
+  bottom: 10px;
   display: block;
   transform-origin: 50% 90%;
 }
@@ -438,130 +439,150 @@ main {
 }
 
 .cartoon-head {
-  width: 48px;
-  height: 48px;
+  width: 62px;
+  height: 66px;
   top: 0;
-  left: 19px;
-  border-radius: 50%;
-  background: #f7c99c;
-  border: 3px solid rgba(23, 50, 77, 0.14);
-  box-shadow: inset -5px -6px 0 rgba(173, 105, 54, 0.1);
-  z-index: 4;
+  left: 28px;
+  border-radius: 48% 48% 46% 46%;
+  background:
+    radial-gradient(circle at 37% 35%, rgba(255, 236, 214, 0.7), transparent 13%),
+    #f4bd8b;
+  border: 3px solid rgba(109, 62, 40, 0.16);
+  box-shadow: inset -7px -8px 0 rgba(173, 105, 54, 0.12), 0 8px 14px rgba(23, 50, 77, 0.08);
+  z-index: 6;
 }
 
 .cartoon-hair {
-  width: 42px;
-  height: 20px;
-  top: -6px;
-  left: 3px;
-  border-radius: 18px 18px 10px 10px;
-  background: #17324d;
+  width: 58px;
+  height: 28px;
+  top: -8px;
+  left: 2px;
+  border-radius: 28px 28px 16px 16px;
+  background:
+    radial-gradient(circle at 14px 24px, #17324d 0 9px, transparent 10px),
+    radial-gradient(circle at 30px 24px, #17324d 0 10px, transparent 11px),
+    radial-gradient(circle at 46px 23px, #17324d 0 8px, transparent 9px),
+    #17324d;
 }
 
 .cartoon-eye {
-  width: 5px;
-  height: 7px;
-  top: 22px;
+  width: 7px;
+  height: 9px;
+  top: 31px;
   border-radius: 50%;
   background: #17324d;
 }
 
 .eye-left {
-  left: 15px;
+  left: 18px;
 }
 
 .eye-right {
-  right: 15px;
+  right: 18px;
 }
 
 .cartoon-smile {
-  width: 18px;
-  height: 9px;
-  left: 15px;
-  bottom: 9px;
-  border: 3px solid #ad5c4d;
+  width: 24px;
+  height: 12px;
+  left: 19px;
+  bottom: 12px;
+  border: 3px solid #9f5145;
   border-top: 0;
   border-radius: 0 0 18px 18px;
 }
 
 .cartoon-body {
-  width: 52px;
-  height: 54px;
-  left: 17px;
-  top: 45px;
-  border-radius: 22px 22px 16px 16px;
-  background: linear-gradient(180deg, #23c483, #0f766e);
+  width: 58px;
+  height: 64px;
+  left: 30px;
+  top: 62px;
+  border-radius: 22px 22px 18px 18px;
+  background:
+    linear-gradient(90deg, transparent 0 42%, rgba(255, 255, 255, 0.16) 42% 58%, transparent 58% 100%),
+    linear-gradient(180deg, #2fd28d, #0f766e);
   border: 3px solid rgba(23, 50, 77, 0.12);
-  z-index: 3;
+  z-index: 4;
 }
 
 .cartoon-body::after {
   content: "";
   position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 13px;
-  top: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.24);
+  width: 28px;
+  height: 12px;
+  left: 12px;
+  top: -3px;
+  border-radius: 0 0 999px 999px;
+  background: #f4bd8b;
 }
 
 .cartoon-arm {
-  width: 14px;
-  height: 52px;
-  top: 52px;
+  width: 17px;
+  height: 62px;
+  top: 70px;
   border-radius: 999px;
-  background: #f7c99c;
+  background: #f4bd8b;
   border: 2px solid rgba(23, 50, 77, 0.1);
-  transform-origin: 50% 8px;
-  z-index: 2;
+  transform-origin: 50% 9px;
+  z-index: 3;
+}
+
+.cartoon-arm::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 18px;
+  left: -3px;
+  bottom: -8px;
+  border-radius: 50%;
+  background: #f4bd8b;
+  border: 2px solid rgba(23, 50, 77, 0.08);
 }
 
 .arm-left {
-  left: 10px;
-  transform: rotate(14deg);
+  left: 21px;
+  transform: rotate(10deg);
 }
 
 .arm-right {
-  right: 10px;
-  transform: rotate(-18deg);
+  right: 21px;
+  transform: rotate(-10deg);
 }
 
 .cartoon-leg {
-  width: 16px;
-  height: 38px;
-  top: 92px;
+  width: 20px;
+  height: 46px;
+  top: 121px;
   border-radius: 999px;
   background: #31558a;
   transform-origin: 50% 4px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .leg-left {
-  left: 24px;
+  left: 34px;
 }
 
 .leg-right {
-  right: 24px;
+  right: 34px;
 }
 
 .cartoon-leg::after {
   content: "";
   position: absolute;
-  width: 25px;
-  height: 10px;
-  left: -4px;
-  bottom: -4px;
+  width: 32px;
+  height: 13px;
+  left: -6px;
+  bottom: -5px;
   border-radius: 999px;
   background: #17324d;
 }
 
 .demo-water {
-  width: 76px;
-  height: 58px;
-  right: 24px;
+  width: 88px;
+  height: 64px;
+  right: 26px;
   bottom: 28px;
-  border-radius: 50% 50% 45% 45%;
+  border-radius: 48% 52% 45% 45%;
   background:
     radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.8), transparent 18%),
     linear-gradient(180deg, #74d4ff, #2aa4e8);
@@ -569,11 +590,11 @@ main {
 }
 
 .demo-prop {
-  right: 38px;
+  right: 36px;
   top: 26px;
-  width: 56px;
-  height: 56px;
-  border-radius: 18px;
+  width: 62px;
+  height: 62px;
+  border-radius: 22px;
   background: rgba(255, 255, 255, 0.75);
   font-size: 2rem;
   box-shadow: 0 8px 18px rgba(23, 50, 77, 0.12);
@@ -599,7 +620,7 @@ main {
 .scene-nose .arm-left,
 .scene-face .arm-left,
 .scene-arms .arm-left {
-  background: linear-gradient(180deg, #f7c99c 0 55%, #74d4ff 55% 100%);
+  background: linear-gradient(180deg, #f4bd8b 0 55%, #74d4ff 55% 100%);
 }
 
 .scene-hands .arm-right,
@@ -607,42 +628,42 @@ main {
 .scene-nose .arm-right,
 .scene-face .arm-right,
 .scene-arms .arm-right {
-  background: linear-gradient(180deg, #f7c99c 0 50%, #74d4ff 50% 100%);
+  background: linear-gradient(180deg, #f4bd8b 0 50%, #74d4ff 50% 100%);
 }
 
 .scene-hands .arm-left {
-  transform: rotate(68deg);
-  left: 25px;
-  top: 66px;
+  transform: rotate(80deg);
+  left: 42px;
+  top: 91px;
 }
 
 .scene-hands .arm-right {
-  transform: rotate(-68deg);
-  right: 25px;
-  top: 66px;
+  transform: rotate(-80deg);
+  right: 42px;
+  top: 91px;
 }
 
 .scene-mouth .arm-right,
 .scene-nose .arm-right,
 .scene-face .arm-right {
-  transform: rotate(-132deg);
-  right: 23px;
-  top: 43px;
+  transform: rotate(-142deg);
+  right: 28px;
+  top: 54px;
 }
 
 .scene-arms .arm-left {
-  transform: rotate(82deg);
-  left: 13px;
+  transform: rotate(72deg);
+  left: 12px;
 }
 
 .scene-arms .arm-right {
-  transform: rotate(-82deg);
-  right: 13px;
+  transform: rotate(-72deg);
+  right: 12px;
 }
 
 .scene-head .demo-water,
 .scene-ears .demo-water {
-  top: 28px;
+  top: 36px;
   right: 32px;
   bottom: auto;
   width: 54px;
@@ -661,25 +682,26 @@ main {
 }
 
 .scene-takbir .arm-left {
-  top: 30px;
-  left: 8px;
-  transform: rotate(152deg);
+  top: 50px;
+  left: 14px;
+  transform: rotate(154deg);
 }
 
 .scene-takbir .arm-right {
-  top: 30px;
-  right: 8px;
-  transform: rotate(-152deg);
+  top: 50px;
+  right: 14px;
+  transform: rotate(-154deg);
 }
 
 .scene-ruku .demo-person {
-  bottom: 32px;
-  transform: rotate(70deg);
+  left: 38px;
+  bottom: 22px;
+  transform: rotate(70deg) scale(0.95);
 }
 
 .scene-ruku .cartoon-head {
-  left: 52px;
-  top: 7px;
+  left: 63px;
+  top: 9px;
 }
 
 .scene-ruku .arm-left,
@@ -697,38 +719,42 @@ main {
 }
 
 .scene-sujood .demo-person {
-  width: 132px;
-  height: 72px;
-  bottom: 28px;
+  width: 154px;
+  height: 96px;
+  left: 26px;
+  bottom: 18px;
 }
 
 .scene-sujood .cartoon-head {
-  left: 82px;
-  top: 34px;
+  width: 56px;
+  height: 58px;
+  left: 96px;
+  top: 42px;
 }
 
 .scene-sujood .cartoon-body {
-  width: 72px;
-  height: 34px;
-  left: 30px;
-  top: 42px;
+  width: 84px;
+  height: 40px;
+  left: 28px;
+  top: 53px;
   transform: rotate(0deg);
+  border-radius: 22px;
 }
 
 .scene-sujood .arm-left,
 .scene-sujood .arm-right {
-  height: 34px;
-  top: 52px;
+  height: 38px;
+  top: 62px;
 }
 
 .scene-sujood .arm-left {
-  left: 80px;
-  transform: rotate(82deg);
+  left: 93px;
+  transform: rotate(78deg);
 }
 
 .scene-sujood .arm-right {
-  right: 6px;
-  transform: rotate(-82deg);
+  right: 0;
+  transform: rotate(-78deg);
 }
 
 .scene-sujood .leg-left,
@@ -738,33 +764,33 @@ main {
 }
 
 .scene-sujood .leg-left {
-  left: 12px;
+  left: 10px;
   transform: rotate(85deg);
 }
 
 .scene-sujood .leg-right {
-  left: 28px;
+  left: 30px;
   transform: rotate(85deg);
 }
 
 .scene-sit .demo-person {
-  bottom: 34px;
+  bottom: 18px;
 }
 
 .scene-sit .cartoon-body {
-  top: 58px;
-  height: 42px;
+  top: 74px;
+  height: 48px;
 }
 
 .scene-sit .leg-left {
-  top: 94px;
-  left: 18px;
+  top: 125px;
+  left: 26px;
   transform: rotate(78deg);
 }
 
 .scene-sit .leg-right {
-  top: 96px;
-  right: 8px;
+  top: 128px;
+  right: 18px;
   transform: rotate(-78deg);
 }
 
