@@ -399,7 +399,19 @@ function renderSteps(container, steps, scenes, content) {
         <article class="step-card">
           <div class="demo-scene scene-${scene}" role="img" aria-label="${content.pictureLabel}: ${title}">
             <span class="demo-sun"></span>
-            <span class="demo-person"></span>
+            <span class="demo-person" aria-hidden="true">
+              <span class="cartoon-head">
+                <span class="cartoon-hair"></span>
+                <span class="cartoon-eye eye-left"></span>
+                <span class="cartoon-eye eye-right"></span>
+                <span class="cartoon-smile"></span>
+              </span>
+              <span class="cartoon-body"></span>
+              <span class="cartoon-arm arm-left"></span>
+              <span class="cartoon-arm arm-right"></span>
+              <span class="cartoon-leg leg-left"></span>
+              <span class="cartoon-leg leg-right"></span>
+            </span>
             <span class="demo-water"></span>
             <span class="demo-prop">${icon}</span>
           </div>
